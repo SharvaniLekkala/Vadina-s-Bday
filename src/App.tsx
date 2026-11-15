@@ -25,7 +25,7 @@ export const App: React.FC = () => {
           <div className="flex items-center gap-2">
             <CoquetteBow size={26} />
             <span className="font-serif font-bold text-gray-800 text-sm sm:text-base tracking-wide">
-              Vadina's Special Day 🎀
+              For Reethika Vadina 🎀
             </span>
           </div>
         </div>

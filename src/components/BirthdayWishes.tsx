@@ -66,7 +66,7 @@ export const BirthdayWishes: React.FC = () => {
           {/* Card Content */}
           <div className="relative z-10 pt-4 sm:pt-6 space-y-5 text-gray-700 font-sans leading-relaxed text-base sm:text-lg">
             <p className="font-serif font-semibold text-xl sm:text-2xl text-pink-800">
-              Happie birthdayy to my sweetest Vadinaaa!! ✨
+              Happie birthdayy to my sweetest Vadinaaa, Reethika!! ✨
             </p>
 
             <p>
@@ -89,7 +89,7 @@ export const BirthdayWishes: React.FC = () => {
 
               <div className="flex items-center gap-1.5 text-xs text-pink-500 font-script text-base">
                 <Sparkles size={14} />
-                <span>Happy Birthday Vadina 🎀</span>
+                <span>Happy Birthday Reethika Vadina 🎀</span>
               </div>
             </div>
           </div>

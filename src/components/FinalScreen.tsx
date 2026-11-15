@@ -74,6 +74,11 @@ export const FinalScreen: React.FC = () => {
           </p>
 
           <div className="mt-6 pt-5 border-t border-pink-200">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/90 text-pink-700 text-xs sm:text-sm font-serif font-semibold mb-3 border border-pink-200">
+              <Sparkles size={13} className="text-pink-500" />
+              <span>To Dearest Reethika 🎀</span>
+              <Sparkles size={13} className="text-pink-500" />
+            </div>
             <p className="font-handwriting text-2xl sm:text-3xl text-pink-700">
               Made with all my love, just for you.
             </p>
@@ -98,7 +103,7 @@ export const FinalScreen: React.FC = () => {
         </div>
 
         <p className="text-xs text-pink-400 mt-8 font-sans">
-          For Vadina's Birthday & The Little Princess On The Way • Crafted with 🎀
+          For Reethika Vadina's Birthday & The Little Princess On The Way • Crafted with 🎀
         </p>
       </div>
     </footer>

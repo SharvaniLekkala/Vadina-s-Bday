@@ -122,6 +122,11 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
             <div className="h-8 w-full absolute bg-champagne-gold/90 shadow-sm"></div>
             {/* Subtle glow highlight */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent pointer-events-none"></div>
+
+            {/* Gift tag to Reethika */}
+            <div className="absolute bottom-3 right-3 bg-white/95 px-2.5 py-1 rounded-lg shadow-sm border border-pink-200 text-[11px] sm:text-xs text-pink-700 font-serif font-semibold transform rotate-3 flex items-center gap-1 z-10">
+              <span>To: Reethika Vadina 🎀</span>
+            </div>
           </motion.div>
 
           {/* Opening burst glow */}
