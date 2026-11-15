@@ -491,3 +491,4 @@ export const PinkBalloons: React.FC<{ className?: string; size?: number }> = ({ 
     <circle cx="50" cy="114" r="3.5" fill="#f43f5e" />
   </svg>
 );
+

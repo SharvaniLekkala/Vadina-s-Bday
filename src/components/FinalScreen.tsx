@@ -98,9 +98,10 @@ export const FinalScreen: React.FC = () => {
         </div>
 
         <p className="text-xs text-pink-400 mt-8 font-sans">
-          A Double Celebration of Vadina's Birthday & Baby Girl's Arrival • Crafted with 🎀
+          For Vadina's Birthday & The Little Princess On The Way • Crafted with 🎀
         </p>
       </div>
     </footer>
   );
 };
+

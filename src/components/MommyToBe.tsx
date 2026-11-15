@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   CoquetteBow,
@@ -8,11 +8,9 @@ import {
   PinkBalloons,
   ExpectantMotherIllustration,
 } from './Decorations';
-import { Heart, Sparkles, Baby, Star } from 'lucide-react';
+import { Sparkles, Baby, Star, Heart } from 'lucide-react';
 
 export const MommyToBe: React.FC = () => {
-  const [pulseSpeed, setPulseSpeed] = useState<'normal' | 'fast'>('normal');
-
   return (
     <section id="mommy-to-be" className="py-20 md:py-28 px-4 sm:px-6 relative overflow-hidden bg-gradient-to-b from-[#fff6f8] via-[#ffe8ee] to-[#fff0f4]">
       {/* Background Motifs */}
@@ -36,16 +34,12 @@ export const MommyToBe: React.FC = () => {
           className="flex justify-center mb-6"
         >
           <div className="relative inline-flex items-center">
-            {/* Left ribbon tail */}
-            <div className="w-8 h-10 bg-pink-400 clip-path-ribbon-left transform -translate-x-1 -rotate-6 hidden sm:block"></div>
             {/* Center banner */}
             <div className="px-6 sm:px-8 py-2.5 bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-serif font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase rounded-full shadow-lg border border-pink-300 flex items-center gap-2.5">
               <Sparkles size={18} className="animate-spin text-yellow-200" />
               <span>🎀 Little Princess Coming Soon 🎀</span>
               <Sparkles size={18} className="animate-spin text-yellow-200" />
             </div>
-            {/* Right ribbon tail */}
-            <div className="w-8 h-10 bg-pink-400 clip-path-ribbon-right transform translate-x-1 rotate-6 hidden sm:block"></div>
           </div>
         </motion.div>
 
@@ -77,32 +71,6 @@ export const MommyToBe: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="coquette-glass rounded-3xl p-6 sm:p-10 md:p-12 shadow-coquette border-2 border-pink-200/90 relative"
         >
-          {/* Subtle animated heartbeat badge */}
-          <div className="flex justify-center -mt-12 sm:-mt-16 mb-6">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              onClick={() => setPulseSpeed(pulseSpeed === 'normal' ? 'fast' : 'normal')}
-              title="Click to feel baby's heartbeat!"
-              className="bg-white px-5 py-2.5 rounded-full shadow-md border-2 border-pink-300 flex items-center gap-3 cursor-pointer group"
-            >
-              <div
-                className={`w-7 h-7 rounded-full bg-rose-500 flex items-center justify-center text-white ${
-                  pulseSpeed === 'fast' ? 'animate-[ping_0.8s_cubic-bezier(0,0,0.2,1)_infinite]' : 'animate-heartbeat'
-                }`}
-              >
-                <Heart size={16} fill="white" />
-              </div>
-              <div className="text-left">
-                <span className="text-xs font-semibold text-rose-600 uppercase tracking-wider block">
-                  Baby's Heartbeat
-                </span>
-                <span className="text-[11px] text-gray-500">
-                  {pulseSpeed === 'fast' ? 'Fluttering with excitement! 💓' : 'Soft & steady rhythm 💕'}
-                </span>
-              </div>
-            </motion.button>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Visuals Column */}
             <div className="lg:col-span-5 flex flex-col items-center justify-center text-center relative">
@@ -150,13 +118,23 @@ export const MommyToBe: React.FC = () => {
                 Wishing you the most beautiful journey into motherhood, filled with countless precious moments, little kicks, tiny smiles and memories you'll cherish forever.
               </p>
 
+              {/* Heartfelt message about distance (India to US) and missing her & baby's first days */}
+              <div className="p-4 rounded-2xl bg-rose-50/80 border border-rose-200/80 shadow-xs space-y-2">
+                <p className="text-rose-900 font-medium text-base sm:text-lg">
+                  I miss you so, so much everyday! 💕
+                </p>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  Being all the way here in India while you're in the US makes it so hard — I truly wish I could just fly over and give you the biggest, tightest hug right now. It honestly breaks my heart a little that I won't be right there by your side during the little princess's first days, but please know that all my love, prayers, and excitement are constantly with you both across every mile!
+                </p>
+              </div>
+
               <p className="font-semibold text-pink-800">
-                Sending you and our little princess the biggest hugs and all the love in the world!
+                Sending you and the little princess the biggest hugs and all the love in the world!
               </p>
 
               <div className="pt-4 flex items-center justify-between border-t border-pink-200">
                 <div className="flex items-center gap-2 text-rose-600 font-serif font-bold text-lg sm:text-xl">
-                  <span>Can't wait to meet our little girl!! 🎀👶🏻</span>
+                  <span>Can't wait to meet the little princess!! 🎀👶🏻</span>
                 </div>
                 <div className="flex items-center gap-1 text-pink-400">
                   <Star size={16} fill="#fbcfe8" />

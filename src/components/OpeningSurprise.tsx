@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { CoquetteBow, TeddyBearWithHeart, ExpectantMotherIllustration, BabyFootprints } from './Decorations';
-import { Sparkles, Heart } from 'lucide-react';
+import { Sparkles, ChevronDown } from 'lucide-react';
 
 interface OpeningSurpriseProps {
   onOpen: () => void;
@@ -20,14 +20,14 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
 
     (function frame() {
       confetti({
-        particleCount: 5,
+        particleCount: 6,
         angle: 60,
         spread: 65,
         origin: { x: 0, y: 0.7 },
         colors: colors,
       });
       confetti({
-        particleCount: 5,
+        particleCount: 6,
         angle: 120,
         spread: 65,
         origin: { x: 1, y: 0.7 },
@@ -39,24 +39,24 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
       }
     })();
 
-    // Extra burst from center
+    // Extra center burst
     setTimeout(() => {
       confetti({
-        particleCount: 80,
+        particleCount: 90,
         spread: 100,
         origin: { y: 0.6 },
         colors: colors,
       });
-    }, 400);
+    }, 350);
 
-    // Transition after box opens
+    // Smoothly scroll down after box opens
     setTimeout(() => {
       onOpen();
-    }, 1800);
+    }, 1200);
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 md:p-8 bg-gradient-to-b from-[#fff0f3] via-[#ffe4e8] to-[#fff5f7] overflow-hidden">
+    <section id="opening-surprise" className="min-h-screen relative flex flex-col items-center justify-center p-4 md:p-8 bg-gradient-to-b from-[#fff0f3] via-[#ffe4e8] to-[#fff6f8] overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-8 left-8 opacity-70 animate-float-slow hidden sm:block">
         <CoquetteBow size={64} />
@@ -86,24 +86,12 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
           </div>
         </div>
 
-        {/* Double Celebration Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 text-xs sm:text-sm font-medium mb-6 border border-pink-200 shadow-sm"
-        >
-          <Sparkles size={14} className="text-pink-500 animate-spin" />
-          <span>Double Celebration Surprise 🎂👶🏻</span>
-          <Heart size={14} className="text-rose-500 fill-rose-500" />
-        </motion.div>
-
         {/* Main Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-800 tracking-tight leading-tight mb-4"
+          transition={{ delay: 0.3 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-800 tracking-tight leading-tight mb-4 pt-2"
         >
           Happie Birthdayyy, <br />
           <span className="bg-gradient-to-r from-pink-600 via-rose-500 to-pink-500 bg-clip-text text-transparent">
@@ -115,25 +103,25 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-sm sm:text-base md:text-lg text-gray-600 font-sans max-w-lg mx-auto leading-relaxed mb-8"
+          transition={{ delay: 0.4 }}
+          className="text-sm sm:text-base md:text-lg text-gray-600 font-sans max-w-lg mx-auto leading-relaxed mb-6"
         >
           Today is not just about celebrating another beautiful year of you... it's also about celebrating the sweetest little miracle growing inside you!
         </motion.p>
 
-        {/* Cute Visuals: Expectant Mother Illustration & Teddy Bear */}
+        {/* Visuals: Expectant Mother Illustration & Teddy Bear */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6 }}
-          className="relative flex items-center justify-center my-6"
+          transition={{ delay: 0.5 }}
+          className="relative flex items-center justify-center my-4"
         >
           <div className="relative p-2 rounded-full bg-white/60 shadow-inner">
-            <ExpectantMotherIllustration size={200} className="transform hover:scale-105 transition-transform duration-500" />
+            <ExpectantMotherIllustration size={190} className="transform hover:scale-105 transition-transform duration-500" />
           </div>
 
           <div className="absolute -bottom-2 -left-2 sm:left-4 animate-float-medium">
-            <TeddyBearWithHeart size={90} />
+            <TeddyBearWithHeart size={85} />
           </div>
           <div className="absolute top-2 right-2 sm:right-6 animate-float-reverse">
             <div className="bg-white/90 p-2 rounded-2xl shadow-sm border border-pink-100 flex items-center gap-1.5 text-xs text-pink-600 font-script font-bold">
@@ -142,8 +130,8 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
           </div>
         </motion.div>
 
-        {/* Interactive Gift Box with 3D feel */}
-        <div className="relative my-8 flex flex-col items-center justify-center">
+        {/* Interactive Gift Box */}
+        <div className="relative my-6 flex flex-col items-center justify-center">
           <motion.div
             animate={
               isOpening
@@ -163,8 +151,7 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
             className="cursor-pointer relative group"
             onClick={!isOpening ? handleOpenClick : undefined}
           >
-            {/* Gift Box SVG Representation */}
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center">
               {/* Gift Box Lid */}
               <motion.div
                 animate={
@@ -173,14 +160,12 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
                     : { y: 0, opacity: 1 }
                 }
                 transition={{ duration: 0.8 }}
-                className="absolute top-4 z-20 w-32 sm:w-40 h-10 bg-gradient-to-r from-pink-400 via-rose-400 to-pink-400 rounded-t-lg shadow-md border-b-2 border-pink-600/20 flex items-center justify-center"
+                className="absolute top-3 z-20 w-30 sm:w-38 h-9 bg-gradient-to-r from-pink-400 via-rose-400 to-pink-400 rounded-t-lg shadow-md border-b-2 border-pink-600/20 flex items-center justify-center"
               >
-                {/* Big Ribbon Bow on Lid */}
-                <div className="absolute -top-8">
-                  <CoquetteBow size={56} className="filter drop-shadow-md" />
+                <div className="absolute -top-7">
+                  <CoquetteBow size={50} className="filter drop-shadow-md" />
                 </div>
-                {/* Gold stripe across lid */}
-                <div className="w-6 h-full bg-champagne-gold/90 shadow-inner"></div>
+                <div className="w-5 h-full bg-champagne-gold/90 shadow-inner"></div>
               </motion.div>
 
               {/* Gift Box Body */}
@@ -190,18 +175,13 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
                     ? { scaleY: 0.8, opacity: 0.9 }
                     : { scaleY: 1 }
                 }
-                className="w-28 sm:w-36 h-28 sm:h-36 bg-gradient-to-br from-pink-300 via-pink-400 to-rose-400 rounded-b-xl shadow-xl relative overflow-hidden flex items-center justify-center border-t border-pink-300"
+                className="w-26 sm:w-34 h-26 sm:h-34 bg-gradient-to-br from-pink-300 via-pink-400 to-rose-400 rounded-b-xl shadow-xl relative overflow-hidden flex items-center justify-center border-t border-pink-300"
               >
-                {/* Vertical Gold Ribbon */}
-                <div className="w-6 h-full bg-champagne-gold/90 shadow-sm"></div>
-                {/* Horizontal Gold Ribbon */}
-                <div className="h-6 w-full absolute bg-champagne-gold/90 shadow-sm"></div>
-
-                {/* Sparkling highlight */}
+                <div className="w-5 h-full bg-champagne-gold/90 shadow-sm"></div>
+                <div className="h-5 w-full absolute bg-champagne-gold/90 shadow-sm"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent pointer-events-none"></div>
               </motion.div>
 
-              {/* Light beam burst when opening */}
               {isOpening && (
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
@@ -219,17 +199,13 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
         </div>
 
         {/* Action Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-        >
+        <div className="mt-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             disabled={isOpening}
             onClick={handleOpenClick}
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-medium text-base sm:text-lg shadow-soft-pink hover:shadow-glow-pink transition-all duration-300 border border-pink-300 relative group overflow-hidden"
+            className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 text-white font-medium text-base sm:text-lg shadow-soft-pink hover:shadow-glow-pink transition-all duration-300 border border-pink-300 relative group overflow-hidden cursor-pointer"
           >
             <span className="relative z-10 flex items-center gap-2">
               <span>Open Your Birthday Surprise 🎀</span>
@@ -237,8 +213,19 @@ export const OpeningSurprise: React.FC<OpeningSurpriseProps> = ({ onOpen }) => {
             </span>
             <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           </motion.button>
-        </motion.div>
+        </div>
       </motion.div>
-    </div>
+
+      {/* Gentle Scroll Down Prompt */}
+      <motion.button
+        onClick={onOpen}
+        animate={{ y: [0, 6, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        className="mt-4 flex flex-col items-center gap-1 text-pink-500/80 hover:text-pink-600 cursor-pointer text-xs font-medium"
+      >
+        <span>Or scroll down to read wishes</span>
+        <ChevronDown size={18} />
+      </motion.button>
+    </section>
   );
 };

@@ -107,3 +107,4 @@ export const FloatingParticles: React.FC = () => {
     </div>
   );
 };
+

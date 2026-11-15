@@ -32,9 +32,6 @@ export const BirthdayWishes: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-800 tracking-tight">
             To My Most Favourite Vadinaaa! 🎂
           </h2>
-          <p className="text-pink-600 font-script text-xl sm:text-2xl mt-1">
-            ~ Always my greatest blessing & favourite human ~
-          </p>
         </motion.div>
 
         {/* Elegant Birthday Card */}
@@ -94,3 +91,4 @@ export const BirthdayWishes: React.FC = () => {
     </section>
   );
 };
+
