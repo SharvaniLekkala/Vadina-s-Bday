@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Custom coquette scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff0f3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ffb3c4;
+    border-radius: 9999px;
+    border: 2px solid #fff0f3;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f75985;
+  }
+}
+
+/* Glassmorphism coquette card styles */
+.coquette-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 209, 220, 0.65);
+}
+
+.coquette-border {
+  border: 2px dashed #fbb6ce;
+}
+
+.scalloped-border {
+  background-image: radial-gradient(#ffccd5 20%, transparent 20%);
+  background-position: 0 0;
+  background-size: 16px 16px;
+}
+
+/* Notebook paper lines for letter */
+.lined-paper {
+  background-color: #fffafb;
+  background-image: linear-gradient(#fed7e2 1px, transparent 1px);
+  background-size: 100% 2rem;
+  line-height: 2rem;
+}
+
+/* Soft shimmer effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+/* Wax seal 3D effect */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #ff758c 0%, #ff4b72 50%, #c81d45 100%);
+  box-shadow: 0 4px 10px rgba(200, 29, 69, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
