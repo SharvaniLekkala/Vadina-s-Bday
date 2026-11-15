@@ -124,7 +124,10 @@ export const MommyToBe: React.FC = () => {
                   I miss you so, so much everyday! 💕
                 </p>
                 <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                  Being all the way here in India while you're in the US makes it so hard — I truly wish I could just fly over and give you the biggest, tightest hug right now. It honestly breaks my heart a little that I won't be right there by your side during the little princess's first days, but please know that all my love, prayers, and excitement are constantly with you both across every mile!
+                  Being all the way here in India while you're in the US makes it so hard. I wish I could just fly over and give you the biggest, tightest hug. Will miss the days the lil one will be small n cutuuu!
+                </p>
+                <p className="text-rose-900 font-medium text-sm sm:text-base leading-relaxed">
+                  India ki meeru next time raaaganee i'll waste no time to come and meet herr!
                 </p>
               </div>
 

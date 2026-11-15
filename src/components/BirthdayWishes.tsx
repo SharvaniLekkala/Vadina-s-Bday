@@ -1,9 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CoquetteBow, TeddyBearWithHeart } from './Decorations';
-import { Cake, Sparkles, Heart } from 'lucide-react';
+import { Cake, Sparkles, Heart, Baby } from 'lucide-react';
 
 export const BirthdayWishes: React.FC = () => {
+  const scrollToBabyLetter = () => {
+    const el = document.getElementById('mommy-to-be');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="birthday-wishes" className="py-16 md:py-24 px-4 sm:px-6 relative overflow-hidden">
       {/* Decorative ambient elements */}
@@ -87,8 +94,22 @@ export const BirthdayWishes: React.FC = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Small Bubble below the birthday card that tells that the baby letter is there */}
+        <div className="mt-8 flex justify-center">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={scrollToBabyLetter}
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-rose-600 text-sm sm:text-base font-medium shadow-md border-2 border-pink-300 hover:bg-pink-50 hover:border-pink-400 transition-all cursor-pointer group"
+          >
+            <Baby size={18} className="text-pink-500 group-hover:scale-110 transition-transform" />
+            <span>P.S. There is a special baby letter for the little princess below... tap to see! 👶🏻💗 ↓</span>
+          </motion.button>
+        </div>
       </div>
     </section>
   );
 };
-
